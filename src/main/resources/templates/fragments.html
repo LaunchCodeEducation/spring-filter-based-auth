@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Spring Boot Filter-Based Authentication Demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div th:fragment="navigation">
+
+    <div th:if="${user}">
+
+        <!-- Nav section for logged-in users -->
+
+        <nav class="user-nav">
+            <a href="/logout">Log Out</a>
+        </nav>
+
+    </div>
+
+    <div th:unless="${user}">
+
+        <!-- Nav section for users that aren't logged in -->
+
+        <nav>
+            <a href="/login">Log In</a> |
+            <a href="/register">Register</a>
+        </nav>
+
+    </div>
+
+</div>
+
+</body>
+</html>
