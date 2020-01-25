@@ -4,13 +4,14 @@ package org.launchcode.springfilterbasedauth;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * Created by LaunchCode
  */
 @Configuration
-public class WebApplicationConfig extends WebMvcConfigurerAdapter {
+public class WebApplicationConfig implements WebMvcConfigurer {
 
     // Create managed bean to allow autowiring
     @Bean
